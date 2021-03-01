@@ -1,0 +1,34 @@
+.read, .like , .dislike{
+    min-height: 150px;
+    margin-bottom: 10px;
+}
+
+hr{
+    border: 1px solid whitesmoke;
+    margin-left: 10px;
+}
+
+.subheading{
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.addbutton{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: green;
+    border: 1px solid transparent;
+    font-size: 30px;
+    outline: transparent;
+    color: whitesmoke;
+}
+
+.buttondiv{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
