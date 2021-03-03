@@ -31,6 +31,7 @@ class BookComponent extends Component {
         else if (MoveTo == "DisLike")
             BookService.DisLikedBooks.push(this.props.Book)
         else if (MoveTo == "Delete" && this.props.group != undefined){
+            BookService.DeletedBookCount = BookService.DeletedBookCount + 1;
             if(this.props.group == "Reading")
                 BookService.CurrentlyReadingBooks.pop(this.props.Book)
             else if(this.props.group == "Like")

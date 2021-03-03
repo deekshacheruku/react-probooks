@@ -11,11 +11,17 @@ class HomeComponent extends Component {
             ReadingBooks : BookService.CurrentlyReadingBooks,
             LikedBooks : BookService.LikedBooks,
             DisLikedBooks : BookService.DisLikedBooks,
-            LaunchSearchComponent : false
+            LaunchSearchComponent : false,
+            ReadBooksCount : BookService.CurrentlyReadingBooks.length,
+            LikedBooksCount : BookService.LikedBooks.length,
+            DisLikedBooksCount : BookService.DisLikedBooks.length,
+            DeletedBooksCount : BookService.DeletedBookCount
         }
     }
 
     ReLaunchHomeComponent = () => {
+        this.setState ( { ReadBooksCount : BookService.CurrentlyReadingBooks.length , LikedBooksCount : BookService.LikedBooks.length,
+                          DisLikedBooksCount : BookService.DisLikedBooks.length , DeletedBooksCount : BookService.DeletedBookCount} )
         this.setState ( { LaunchSearchComponent : false})
     }
 
@@ -59,6 +65,12 @@ class HomeComponent extends Component {
                         </div>
                         <div className ="buttondiv">
                             <button className ="addbutton" onClick = {this.OnClickSearchHandler}> + </button>
+                        </div>
+                        <div className = "infodiv">
+                                <p className = "countinfo">No of Books read : {this.state.ReadBooksCount}</p>
+                                <p className = "countinfo">No of Books Liked : {this.state.LikedBooksCount}</p>
+                                <p className = "countinfo">No of Books DisLiked : {this.state.DisLikedBooksCount}</p>
+                                <p className = "countinfo">No of Books Deleted : {this.state.DeletedBooksCount}</p>
                         </div>
                     </div>
             );

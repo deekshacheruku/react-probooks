@@ -3,6 +3,7 @@ class BookService{
     CurrentlyReadingBooks = [];
     LikedBooks = [];
     DisLikedBooks = [];
+    DeletedBookCount = 0;
 }
 
 const ExportBookService = new BookService();

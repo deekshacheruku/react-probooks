@@ -38,3 +38,16 @@ hr{
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.countinfo{
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.infodiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
