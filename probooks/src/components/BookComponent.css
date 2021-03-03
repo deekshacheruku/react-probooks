@@ -1,0 +1,44 @@
+.bookcontainer{
+    padding: 20px;
+}
+
+.booksubconatiner{
+    position: relative;
+}
+
+.image{
+    width: 150px;
+    height: 200px;
+}
+
+.arrowdown{
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid whitesmoke;
+}
+
+.arrowdownbutton{
+    background-color: green;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 73%;
+    left: 64%;
+}
+
+.booktitle{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.dropdown{
+    width: 100px;
+}

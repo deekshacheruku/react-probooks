@@ -32,3 +32,9 @@ hr{
     justify-content: flex-end;
     padding-right: 20px;
 }
+
+.subcontainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

@@ -31,7 +31,9 @@ class App extends Component {
     return (
       <div className="App">
         <HeaderComponent></HeaderComponent>
+        <div id = "home">
          {this.state.isDataLoaded && <HomeComponent></HomeComponent>}
+        </div>
       </div>
     );
   }

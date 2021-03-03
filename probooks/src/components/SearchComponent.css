@@ -9,3 +9,19 @@
     margin-top: 10px;
     box-shadow: 5px 5px 5px rgb(95, 93, 93);
 }
+
+#searchdisplay{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#searchdisplaycount{
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 35px;
+    margin-top: 20px;
+}

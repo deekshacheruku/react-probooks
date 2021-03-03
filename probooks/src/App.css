@@ -6,3 +6,11 @@
 .App {
   text-align: center;
 }
+
+.hide{
+  display: none;
+}
+
+.unhide{
+  display: contents;
+}

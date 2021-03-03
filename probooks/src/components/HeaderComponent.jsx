@@ -4,7 +4,7 @@ import "./HeaderComponent.css";
 class HeaderComponent extends Component {
     render() {
         return (
-            <div className="header">
+            <div className = "header">
                 <p>ProBook</p>
             </div>
         );

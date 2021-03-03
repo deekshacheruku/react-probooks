@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import BookService from "./BookService.js";
-import ReactDOM from "react-dom"
+import BookService from "./BookService.js"
+import BookComponent from "./BookComponent.jsx";
 import "./SearchComponent.css"
 
 class SearchComponent extends Component {
@@ -9,16 +9,23 @@ class SearchComponent extends Component {
         this.state = {
             UserInput : "", 
             BooksAvailable : BookService.BooksAvailable,
+            BooksFoundCount : 0,
+            SearchedBooks : []
         }
         this.TempUserInput = "",
         this.CurrentlySearchingBooks = []
     }
 
+    ShouldLaunchHomeComponent = () => {
+        this.props.ShouldReLaunchHomeComponent()
+    } 
+
     renderOutput(){
         const MapRows = this.CurrentlySearchingBooks.map(item => {
-            return <p>{item.title}</p>
+            return <BookComponent Book = {item} key = {item.title} ShouldLaunchHomeComponent = {this.ShouldLaunchHomeComponent.bind(this)} ></BookComponent>
         })
-        ReactDOM.render(MapRows,document.getElementById("searchdisplay"))
+        this.setState ( {BooksFoundCount : this.CurrentlySearchingBooks.length} )
+        this.state.SearchedBooks = MapRows
     }
 
     UpdateCurrentlySearchingBooks(){
@@ -51,8 +58,13 @@ class SearchComponent extends Component {
     render() {
         return (
             <div className = "searchcontainer">
-                <input className = "searchbar" type = "text" value = {this.state.UserInput} placeholder = "Search by Title or Author " onChange = {this.OnChangeInputSearchHandler}/>
-                <div id = "searchdisplay"></div>
+                <input className = "searchbar" type = "text" value = {this.state.UserInput} placeholder = "Search by Title or Author " onChange = {this.OnChangeInputSearchHandler} autoFocus/>
+                <div id = "searchdisplaycount"><p>{this.state.BooksFoundCount} Books Found!</p> </div>
+                <div id = "searchdisplay">
+                    {this.state.SearchedBooks.map(book => {
+                        return book
+                    })}
+                </div>
             </div>
         );
     }
